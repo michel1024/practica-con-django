@@ -1,0 +1,54 @@
+{% extends 'twitter/layout.html' %}
+{% block content %}
+
+<body class="login-page">
+    <div class="twitter-login-box">
+        <header>
+            <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
+                alt="twitter logo">
+            <h1>Registrate en Twitter</h1>
+        </header>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-wrapper">
+                <label for="user-name-id">First Name</label>
+                {{ u_form.first_name }}
+            </div>
+            <div class="input-wrapper">
+                <label for="user-name-id">Username</label>
+                {{ u_form.username }}
+            </div>
+            <div class="input-wrapper">
+                <label for="user-name-id">Email</label>
+                {{ u_form.email }}
+            </div>
+            <div class="input-wrapper">
+                <label for="user-name-id">Bio</label>
+                {{ p_form.bio }}
+            </div>
+            <div class="input-wrapper">
+                <label for="user-name-id">Image</label>
+                {{ p_form.image }}
+            </div>
+            <div class="input-wrapper">
+                <label for="password-id">Password</label>
+                {{ u_form.password1 }}
+                {{ u_form.password1.errors }}
+            </div>
+            <div class="input-wrapper">
+                <label for="password-id">Confirm Password</label>
+                {{ u_form.password2 }}
+                {{ u_form.password2.errors }}
+            </div>
+
+            <button class="twitter-btn">Registrarse</button>
+        </form>
+
+        <div class="footer">
+            <a href="#">¿Ya tienes una cuenta? Login</a>
+        </div>
+
+    </div>
+
+    {% endblock content %}
